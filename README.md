@@ -3,7 +3,7 @@
 Simple Weather Retrieval Module for http://openweathermap.org/
 
 ### Version
-0.4.0
+0.4.1
 
 ### Installation
 ```sh
@@ -23,7 +23,7 @@ openWeather.getWeather(coords, function(result){
 }, [key]);
 
 // Example coordinate object:
-{"coords": {"latitude": 37, "longitude": -122 }}
+{"latitude": 37, "longitude": -122 }
 
 
 // Example data from result includes temperature 

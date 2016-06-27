@@ -24,34 +24,38 @@ const getWeather = (params, callback, key) => {
       }
       const bodyObj = JSON.parse(body);
 
-      const avgTempC = Math.round(convertKToC(Number(bodyObj.main.temp)) * 100) / 100;
-      const minTempC = Math.round(convertKToC(Number(bodyObj.main.temp_min)) * 100) / 100;
-      const maxTempC = Math.round(convertKToC(Number(bodyObj.main.temp_max)) * 100) / 100;
+      if (body.cod === '404') {
+        callback(body);
+      } else {
+        const avgTempC = Math.round(convertKToC(Number(bodyObj.main.temp)) * 100) / 100;
+        const minTempC = Math.round(convertKToC(Number(bodyObj.main.temp_min)) * 100) / 100;
+        const maxTempC = Math.round(convertKToC(Number(bodyObj.main.temp_max)) * 100) / 100;
 
-      const avgTempF = Math.round(convertKToF(Number(bodyObj.main.temp)) * 100) / 100;
-      const minTempF = Math.round(convertKToF(Number(bodyObj.main.temp_min)) * 100) / 100;
-      const maxTempF = Math.round(convertKToF(Number(bodyObj.main.temp_max)) * 100) / 100;
+        const avgTempF = Math.round(convertKToF(Number(bodyObj.main.temp)) * 100) / 100;
+        const minTempF = Math.round(convertKToF(Number(bodyObj.main.temp_min)) * 100) / 100;
+        const maxTempF = Math.round(convertKToF(Number(bodyObj.main.temp_max)) * 100) / 100;
 
-      const resObj = {
-        lon: bodyObj.coord.lon,
-        lat: bodyObj.coord.lat,
-        city: bodyObj.name,
-        country: bodyObj.sys.country,
-        sunset: bodyObj.sys.sunset,
-        sunrise: bodyObj.sys.sunrise,
-        weather: bodyObj.weather[0].main,
-        weatherDes: bodyObj.weather[0].description,
-        avgTempK: bodyObj.main.temp,
-        minTempK: bodyObj.main.temp_min,
-        maxTempK: bodyObj.main.temp_max,
-        avgTempC,
-        minTempC,
-        maxTempC,
-        avgTempF,
-        minTempF,
-        maxTempF,
-      };
-      callback(resObj);
+        const resObj = {
+          lon: bodyObj.coord.lon,
+          lat: bodyObj.coord.lat,
+          city: bodyObj.name,
+          country: bodyObj.sys.country,
+          sunset: bodyObj.sys.sunset,
+          sunrise: bodyObj.sys.sunrise,
+          weather: bodyObj.weather[0].main,
+          weatherDes: bodyObj.weather[0].description,
+          avgTempK: bodyObj.main.temp,
+          minTempK: bodyObj.main.temp_min,
+          maxTempK: bodyObj.main.temp_max,
+          avgTempC,
+          minTempC,
+          maxTempC,
+          avgTempF,
+          minTempF,
+          maxTempF,
+        };
+        callback(resObj);
+      }
     });
   }
 };
