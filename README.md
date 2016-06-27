@@ -1,9 +1,9 @@
-# OpenWeatherJS
+#openweather
 
 Simple Weather Retrieval Module for http://openweathermap.org/
 
 ### Version
-0.2.0
+0.2.1
 
 ### Installation
 ```sh
