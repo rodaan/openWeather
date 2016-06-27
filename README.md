@@ -3,7 +3,7 @@
 Simple Weather Retrieval Module for http://openweathermap.org/
 
 ### Version
-0.3.0
+0.4.0
 
 ### Installation
 ```sh

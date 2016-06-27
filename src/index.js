@@ -7,7 +7,7 @@ const convertKToC = (celsiusTemp) => celsiusTemp - 273.15;
 
 const getWeather = (params, callback, key) => {
   const APPID = process.env.APPID || key;
-  if (!key) {
+  if (!APPID) {
     callback('You need a key from http://openweathermap.org/');
   } else {
     request({
@@ -51,7 +51,6 @@ const getWeather = (params, callback, key) => {
         minTempF,
         maxTempF,
       };
-      console.log('response object is:', resObj);
       callback(resObj);
     });
   }
