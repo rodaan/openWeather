@@ -31,6 +31,7 @@
     "eslint-plugin-react": "^5.2.2"
   },
   "dependencies": {
+    "countrynames": "^0.1.1",
     "request": "^2.72.0"
   }
 }
