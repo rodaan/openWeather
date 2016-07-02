@@ -3,7 +3,7 @@
 Simple Weather Retrieval Module for http://openweathermap.org/
 
 ### Version
-0.4.1
+1.0.1
 
 ### Installation
 ```sh
@@ -16,7 +16,7 @@ Obtain api "key" from http://openweathermap.org/ after registration. It is calle
 var openWeather = require('openweather');
 
 // Returns data from open weather using desired 
-// coordinates from a coordinate object:
+// coordinates, city name, or zip code from a object or city name:
 
 openWeather.getWeather(coords, function(result){
   console.log(result);
@@ -25,27 +25,33 @@ openWeather.getWeather(coords, function(result){
 // Example coordinate object:
 {"latitude": 37, "longitude": -122 }
 
+// Example city object
+
 
 // Example data from result includes temperature 
 // in Kelvins, Fahrenheit, and Celsius:
 {
-  "lon": 123.45,
-  "lat": 67.89,
-  "city": "Your City",
-  "country": "Your Country,
-  "sunset": 1467084939,
-  "sunrise": 1467031822,
+  "lon": -123.12,
+  "lat": 49.25,
+  "city": "Vancouver",
+  "country": "CA",
+  "sunset": 1467433243,
+  "sunrise": 1467375137,
+  "humidity": 68,
+  "pressure": 1019,
+  "icon": "http://openweathermap.org/img/w/04d.png",
   "weather": "Clouds",
-  "weatherDes": "few clouds",
-  "avgTempK": 301.84,
-  "minTempK": 292.15,
-  "maxTempK": 310.93,
-  "avgTempC": 28.69,
-  "minTempC": 19,
-  "maxTempC": 37.78,
-  "avgTempF": 83.64,
-  "minTempF": 66.2,
-  "maxTempF": 100
+  "weatherDes": "broken clouds",
+  "windSpeed": 3.6,
+  "avgTempK": 293.07,
+  "minTempK": 289.15,
+  "maxTempK": 296.48,
+  "avgTempC": 19.92,
+  "minTempC": 16,
+  "maxTempC": 23.33,
+  "avgTempF": 67.86,
+  "minTempF": 60.8,
+  "maxTempF": 73.99
 }
 
 };
