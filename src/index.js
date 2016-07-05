@@ -6,7 +6,7 @@ const convertKToF = (kelvinTemp) => kelvinTemp * (9 / 5) - 459.67;
 
 const convertKToC = (celsiusTemp) => celsiusTemp - 273.15;
 
-const openWeather = (params, key, callback) => {
+const openWeather = (params, callback, key) => {
   const APPID = process.env.APPID || key;
   const queryStringObj = { APPID };
   let completeQuery = false;
