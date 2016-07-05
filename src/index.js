@@ -10,7 +10,7 @@ const openWeather = (params, callback, key) => {
   const APPID = process.env.APPID || key;
   const queryStringObj = { APPID };
   let completeQuery = false;
-  if (!key) {
+  if (!APPID) {
     callback('You need a key from http://openweathermap.org/');
   }
   if (params.latitude !== undefined && params.longitude !== undefined) {
