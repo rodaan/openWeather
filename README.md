@@ -3,7 +3,7 @@
 Simple Weather Retrieval Module for http://openweathermap.org/
 
 ### Version
-1.0.1
+1.0.2
 
 ### Installation
 ```sh
@@ -25,7 +25,17 @@ openWeather.getWeather(coords, function(result){
 // Example coordinate object:
 {"latitude": 37, "longitude": -122 }
 
-// Example city object
+// Example city object. Country is optional  
+{
+    "city": "San Francisco",
+    "country": "ca"
+}
+
+// Example zip code object
+
+{
+    "zip": "94115"
+}
 
 
 // Example data from result includes temperature 
