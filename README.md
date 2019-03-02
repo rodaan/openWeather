@@ -1,4 +1,4 @@
-#openweather
+# openweather
 
 Simple Weather Retrieval Module for http://openweathermap.org/
 
